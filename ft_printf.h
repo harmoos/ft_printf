@@ -6,7 +6,7 @@
 /*   By: nleoni <nleoni@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 17:00:35 by nleoni            #+#    #+#             */
-/*   Updated: 2024/01/26 00:30:35 by nleoni           ###   ########.fr       */
+/*   Updated: 2024/01/26 12:10:49 by nleoni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 
 int		ft_printf(const char *format, ...);
 int		ft_type(va_list args, char c, int *len);
+int		ft_select_char(const char *format, int *i, int *len);
 void	ft_printchar(char c, int *len);
 void	ft_printstr(char *str, int *len);
 void	ft_printptr(unsigned long long ptr, int *len);

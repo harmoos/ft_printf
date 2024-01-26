@@ -6,7 +6,7 @@
 /*   By: nleoni <nleoni@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 15:04:22 by nleoni            #+#    #+#             */
-/*   Updated: 2024/01/26 01:14:01 by nleoni           ###   ########.fr       */
+/*   Updated: 2024/01/26 16:59:35 by nleoni           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	ft_type(va_list args, char c, int *len)
 	return (1);
 }
 
-int	ft_count_char(const char *format, int *i, int *len)
+int	ft_select_char(const char *format, int *i, int *len)
 {
 	while (format[*i] != '%' && format[*i])
 	{
@@ -52,14 +52,14 @@ int	ft_printf(const char *format, ...)
 	int		temp;
 	va_list	args;
 
-	if (!format || *format == '\0')
-		return (0);
+	if (!format)
+		return (-1);
 	len = 0;
 	i = 0;
 	va_start(args, format);
 	while (format[i])
 	{
-		if (ft_count_char(format, &i, &len))
+		if (ft_select_char(format, &i, &len))
 		{
 			i++;
 			temp = ft_type(args, format[i], &len);
